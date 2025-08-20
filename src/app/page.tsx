@@ -2,12 +2,11 @@ import Hero from "@/app/components/hero"
 import DateAnnouncement from "./components/date-announcement"
 import BrideGroom from "./components/bride-groom"
 import OurStory from "./components/our-story"
-import Quote from "./components/quote"
+import MapSection from "./components/maps-section"
+import Footer from "./components/footer"
 // import Wishes from "@/components/wishes"
 // import PhotoGallery from "@/components/photo-gallery"
 // import Reception from "@/components/reception"
-// import MapSection from "@/components/map-section"
-// import Footer from "@/components/footer"
 
 export default function Home() {
   return (
@@ -16,12 +15,11 @@ export default function Home() {
       <DateAnnouncement />
       <BrideGroom />
       <OurStory />
-      <Quote />
       {/* <Wishes />
       <PhotoGallery />
-      <Reception />
+      <Reception /> */}
       <MapSection />
-      <Footer /> */}
+      <Footer />
     </div>
   )
 }

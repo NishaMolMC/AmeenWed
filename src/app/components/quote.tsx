@@ -13,7 +13,7 @@ export default function Quote() {
           transition={{ duration: 0.8, type: "spring", stiffness: 200 }}
           viewport={{ once: true }}
         >
-          <div className="text-4xl text-gray-400 font-serif">"</div>
+          <div className="text-4xl text-gray-400 font-serif">&quot;</div>
         </motion.div>
 
         <motion.blockquote
