@@ -186,7 +186,7 @@ export default function MapSection() {
         </motion.div>
 
         {/* Action Button */}
-        <motion.div
+        {/* <motion.div
           className="text-center"
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -201,7 +201,7 @@ export default function MapSection() {
           >
             Get Directions
           </motion.button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )
