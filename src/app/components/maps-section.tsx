@@ -26,7 +26,7 @@ export default function MapSection() {
   }
 
   return (
-    <section className="py-12 px-6 bg-gray-50">
+    <section className="py-12 px-6 bg-white/90">
       <div className="max-w-sm mx-auto">
         {/* Map Container */}
         <motion.div

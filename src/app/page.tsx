@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       <DateAnnouncement />
       <BrideGroom />
-      <OurStory />
+      {/* <OurStory /> */}
       {/* <Wishes />
       <PhotoGallery />
       <Reception /> */}
