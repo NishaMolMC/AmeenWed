@@ -1,5 +1,4 @@
 "use client"
-
 import { motion } from "framer-motion"
 
 export default function Footer() {
@@ -12,7 +11,15 @@ export default function Footer() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-400 text-sm font-light">Csiitt</p>
+          <a
+            href="https://www.csiitt.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 text-sm font-light"
+            aria-label="Visit csiitt website"
+          >
+            csiitt
+          </a>
         </motion.div>
       </div>
     </footer>

@@ -10,7 +10,7 @@ export default function MapSection() {
   const venueLocation = {
     lat: 11.6854,
     lng: 76.132,
-    name: "BICHAS ROOMS",
+    name: "BICHAS AUDITORIUM",
     address: "Millumukku, Wayanad, Kerala 670721",
     landmark: "",
   }

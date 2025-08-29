@@ -79,7 +79,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6 -mt-48">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6 -mt-80">
         <motion.h1
           className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold mb-4 tracking-wide leading-tight"
           initial={{ y: 50, opacity: 0 }}
