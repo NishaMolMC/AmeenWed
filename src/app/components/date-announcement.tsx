@@ -7,7 +7,7 @@ export default function DateAnnouncement() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 
   useEffect(() => {
-    const targetDate = new Date("2025-09-14T00:00:00").getTime()
+    const targetDate = new Date(2025, 8, 14, 18, 0, 0).getTime()
 
     const updateTimer = () => {
       const now = new Date().getTime()
@@ -32,17 +32,19 @@ export default function DateAnnouncement() {
   const handleAddToCalendar = () => {
     const eventDetails = {
       title: "Wedding Reception",
-      start: "20250914T000000Z",
-      end: "20250914T030000Z",
+      start: "20250914T180000",
+      end: "20250914T210000",
       description: "Join us in celebrating our blessed union at our wedding reception!",
       location: "Reception Venue",
     }
 
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+
     const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-      eventDetails.title
+      eventDetails.title,
     )}&dates=${eventDetails.start}/${eventDetails.end}&details=${encodeURIComponent(
-      eventDetails.description
-    )}&location=${encodeURIComponent(eventDetails.location)}`
+      eventDetails.description,
+    )}&location=${encodeURIComponent(eventDetails.location)}&ctz=${encodeURIComponent(tz)}`
 
     window.open(googleCalendarUrl, "_blank")
   }
@@ -92,14 +94,14 @@ export default function DateAnnouncement() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium text-gray-800 mb-3">
-            September 14th
-          </h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium text-gray-800 mb-3">September 14th</h2>
 
           <div className="flex justify-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/70 backdrop-blur px-4 py-1.5 sm:px-5 sm:py-2 text-gray-700 font-serif text-base sm:text-lg lg:text-xl shadow-sm">
               <span className="tracking-wide">Sunday</span>
-              <span aria-hidden="true" className="text-gray-400">•</span>
+              <span aria-hidden="true" className="text-gray-400">
+                •
+              </span>
               <span className="tabular-nums">
                 <time dateTime="2025-09-14T18:00:00">6:00 pm</time>
                 {" – "}
@@ -118,10 +120,8 @@ export default function DateAnnouncement() {
           viewport={{ once: true }}
         >
           <div className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-gray-800 mb-2 tabular-nums">
-            {String(timeLeft.days).padStart(2, "0")}:
-            {String(timeLeft.hours).padStart(2, "0")}:
-            {String(timeLeft.minutes).padStart(2, "0")}:
-            {String(timeLeft.seconds).padStart(2, "0")}
+            {String(timeLeft.days).padStart(2, "0")}:{String(timeLeft.hours).padStart(2, "0")}:
+            {String(timeLeft.minutes).padStart(2, "0")}:{String(timeLeft.seconds).padStart(2, "0")}
           </div>
           <p className="text-gray-500 text-lg sm:text-xl lg:text-2xl tracking-widest mb-6 font-serif">
             DD : HH : MM : SS
