@@ -12,7 +12,7 @@ export default function Footer() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-400 text-sm font-light">Csiit</p>
+          <p className="text-gray-400 text-sm font-light">Csiitt</p>
         </motion.div>
       </div>
     </footer>

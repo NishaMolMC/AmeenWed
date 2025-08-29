@@ -35,27 +35,19 @@ export default function BrideGroom() {
           <div className="space-y-8">
             {/* Groom */}
             <div className="text-center">
-              <h3 className="text-2xl font-serif font-medium mb-4 text-gray-800">Johny</h3>
+              <h3 className="text-2xl font-serif font-medium mb-4 text-gray-800">Ameen Koya</h3>
               <div className="space-y-3">
-                <p className="text-gray-600 leading-relaxed">
-                  The son of Mr. & Mrs. Brown James & Mr. James Practical House, Pune.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  Grand Son of Mr. & Mrs. Jolly & Mr. Jolly Practical House, Pune, Tamilnadu.
-                </p>
+                <p className="text-gray-600 leading-relaxed">S/o Moosa &amp; Sameena Ambileri</p>
+                <p className="text-gray-600 leading-relaxed">Pottengal (H), Kambalakkad, Wayanad</p>
               </div>
             </div>
 
             {/* Bride */}
             <div className="text-center">
-              <h3 className="text-2xl font-serif font-medium mb-4 text-gray-800">June</h3>
+              <h3 className="text-2xl font-serif font-medium mb-4 text-gray-800">Resmiya Sherin</h3>
               <div className="space-y-3">
-                <p className="text-gray-600 leading-relaxed">
-                  The daughter of Mr. & Mrs. Brown James & Mr. James Practical House, Pune.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  Grand Daughter of Mr. & Mrs. Jolly & Mr. Jolly Practical House, Pune, Tamilnadu.
-                </p>
+                <p className="text-gray-600 leading-relaxed">D/o Mr. Shameer TM &amp; Mrs. Junsi Shameer</p>
+                <p className="text-gray-600 leading-relaxed">Thandayil (H), Pulpally, Wayanad</p>
               </div>
             </div>
           </div>

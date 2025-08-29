@@ -4,24 +4,24 @@ import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
 
 export default function DateAnnouncement() {
-  const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 })
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 
   useEffect(() => {
-    // Set target date to September 3, 2025
-    const targetDate = new Date("2025-09-03T00:00:00").getTime()
+    const targetDate = new Date("2025-09-14T00:00:00").getTime()
 
     const updateTimer = () => {
       const now = new Date().getTime()
       const difference = targetDate - now
 
       if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24))
         const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
         const seconds = Math.floor((difference % (1000 * 60)) / 1000)
 
-        setTimeLeft({ hours, minutes, seconds })
+        setTimeLeft({ days, hours, minutes, seconds })
       } else {
-        setTimeLeft({ hours: 0, minutes: 0, seconds: 0 })
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
       }
     }
 
@@ -33,14 +33,13 @@ export default function DateAnnouncement() {
 
   const handleAddToCalendar = () => {
     const eventDetails = {
-      title: "Engagement Ceremony",
-      start: "20250903T000000Z",
-      end: "20250903T030000Z",
-      description: "Join us in celebrating our love at our engagement ceremony!",
-      location: "Ceremony Venue",
+      title: "Wedding Reception",
+      start: "20250914T000000Z",
+      end: "20250914T030000Z",
+      description: "Join us in celebrating our blessed union at our wedding reception!",
+      location: "Reception Venue",
     }
 
-    // Create Google Calendar URL
     const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventDetails.title)}&dates=${eventDetails.start}/${eventDetails.end}&details=${encodeURIComponent(eventDetails.description)}&location=${encodeURIComponent(eventDetails.location)}`
 
     window.open(googleCalendarUrl, "_blank")
@@ -56,18 +55,29 @@ export default function DateAnnouncement() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Background overlay for opacity */}
       <div className="absolute inset-0 bg-white/85"></div>
 
       <div className="max-w-sm mx-auto relative z-10">
-        <motion.p
-          className="text-gray-700 mb-8 text-xl sm:text-2xl lg:text-3xl leading-relaxed font-serif"
+         <motion.div
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          Join us in celebrating our love at our Nikkah ceremony!
+          <img
+            src="bismillah.png"
+            alt="Bismillah in Arabic calligraphy"
+            className="mx-auto w-32 sm:w-40 lg:w-48 h-auto"
+          />
+        </motion.div>
+        <motion.p
+          className="text-gray-700 mb-8 -mt-6 text-lg sm:text-xl lg:text-2xl leading-relaxed font-serif"
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          Your gracious presence is requested at our Wedding Reception.
         </motion.p>
 
         <motion.div
@@ -77,8 +87,8 @@ export default function DateAnnouncement() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium text-gray-800 mb-2">September 3rd</h2>
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 font-serif font-light mb-6">Tuesday</p>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-medium text-gray-800 mb-2">September 14th</h2>
+          <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 font-serif font-light mb-6">Saturday</p>
         </motion.div>
 
         <motion.div
@@ -88,12 +98,12 @@ export default function DateAnnouncement() {
           transition={{ duration: 1, delay: 0.4, type: "spring", stiffness: 100 }}
           viewport={{ once: true }}
         >
-          <div className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium text-gray-800 mb-2">
-            {String(timeLeft.hours).padStart(2, "0")}.{String(timeLeft.minutes).padStart(2, "0")}.
-            {String(timeLeft.seconds).padStart(2, "0")}
+          <div className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-gray-800 mb-2">
+            {String(timeLeft.days).padStart(2, "0")}:{String(timeLeft.hours).padStart(2, "0")}:
+            {String(timeLeft.minutes).padStart(2, "0")}:{String(timeLeft.seconds).padStart(2, "0")}
           </div>
           <p className="text-gray-500 text-lg sm:text-xl lg:text-2xl tracking-widest mb-6 font-serif">
-            H H . M M . S S
+            DD : HH : MM : SS
           </p>
         </motion.div>
 

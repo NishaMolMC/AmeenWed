@@ -10,19 +10,19 @@ export default function MapSection() {
   const venueLocation = {
     lat: 11.6854,
     lng: 76.132,
-    name: "Grand Wedding Resort",
-    address: "Vythiri, Wayanad, Kerala 673576",
-    landmark: "Near Pookode Lake",
+    name: "BICHAS ROOMS",
+    address: "Millumukku, Wayanad, Kerala 670721",
+    landmark: "",
   }
 
+  const mapsUrl = "https://maps.app.goo.gl/4Agpi9ArGaWzB4Sw7"
+
   const handleLocationClick = () => {
-    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${venueLocation.lat},${venueLocation.lng}`
-    window.open(googleMapsUrl, "_blank")
+    window.open(mapsUrl, "_blank")
   }
 
   const handleGetDirections = () => {
-    const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${venueLocation.lat},${venueLocation.lng}`
-    window.open(directionsUrl, "_blank")
+    window.open(mapsUrl, "_blank")
   }
 
   return (
@@ -89,29 +89,15 @@ export default function MapSection() {
               <div className="absolute inset-0 flex items-center justify-center">
                 <motion.div
                   className="relative"
-                  animate={{
-                    y: [0, -8, 0],
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Number.POSITIVE_INFINITY,
-                    ease: "easeInOut",
-                  }}
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 2.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
                 >
                   {/* Pin Shadow */}
                   <motion.div
                     className="absolute top-12 left-1/2 transform -translate-x-1/2 w-6 h-2 bg-black/10 rounded-full blur-sm"
-                    animate={{
-                      scale: [1, 0.8, 1],
-                      opacity: [0.3, 0.1, 0.3],
-                    }}
-                    transition={{
-                      duration: 2.5,
-                      repeat: Number.POSITIVE_INFINITY,
-                      ease: "easeInOut",
-                    }}
+                    animate={{ scale: [1, 0.8, 1], opacity: [0.3, 0.1, 0.3] }}
+                    transition={{ duration: 2.5, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
                   />
-
                   {/* Main Pin */}
                   <motion.div
                     className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center shadow-lg relative"
@@ -123,10 +109,7 @@ export default function MapSection() {
                         "0 4px 20px rgba(239, 68, 68, 0.3)",
                       ],
                     }}
-                    transition={{
-                      duration: 2,
-                      repeat: Number.POSITIVE_INFINITY,
-                    }}
+                    transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                   >
                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path
@@ -136,7 +119,6 @@ export default function MapSection() {
                       />
                     </svg>
                   </motion.div>
-
                   {/* Pin Tail */}
                   <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-2 border-r-2 border-t-4 border-transparent border-t-red-500"></div>
                 </motion.div>
@@ -185,23 +167,6 @@ export default function MapSection() {
           </motion.div>
         </motion.div>
 
-        {/* Action Button */}
-        {/* <motion.div
-          className="text-center"
-          initial={{ y: 30, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <motion.button
-            onClick={handleGetDirections}
-            className="border border-gray-300 text-gray-600 hover:bg-gray-50 px-8 py-2 text-sm bg-transparent rounded-md transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get Directions
-          </motion.button>
-        </motion.div> */}
       </div>
     </section>
   )
