@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ameenresmiyawedding.vercel.app"),
   title: "Ameen & Resmiya",
   description:
-    "In the name of Allah. Your gracious presence is requested at our Wedding Reception. Groom: S/o Moosa & Sameena Ambileri, Pottengal (H), Kambalakkad, Wayanad. Bride: D/o Mr. Shameer TM & Mrs. Junsi Shameer, Thandayil (H), Pulpally, Wayanad.",
+    "In the name of Allah. Your gracious presence is requested at our Wedding Reception.",
   openGraph: {
     type: "website",
     url: "https://ameenresmiyawedding.vercel.app",
     title: "Ameen & Resmiya",
     description:
-      "Your gracious presence is requested at our Wedding Reception. Groom: S/o Moosa & Sameena Ambileri, Pottengal (H), Kambalakkad, Wayanad. Bride: D/o Mr. Shameer TM & Mrs. Junsi Shameer, Thandayil (H), Pulpally, Wayanad.",
+      "Your gracious presence is requested at our Wedding Reception.",
     images: [
       {
         url: "/img1.jpg",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Ameen & Resmiya",
     description:
-      "Your gracious presence is requested at our Wedding Reception. Groom: S/o Moosa & Sameena Ambileri, Pottengal (H), Kambalakkad, Wayanad. Bride: D/o Mr. Shameer TM & Mrs. Junsi Shameer, Thandayil (H), Pulpally, Wayanad.",
+      "Your gracious presence is requested at our Wedding Reception.",
     images: ["/img1.jpg"],
   },
 }
