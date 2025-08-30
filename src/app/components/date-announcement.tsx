@@ -61,8 +61,8 @@ export default function DateAnnouncement() {
     >
       <div className="absolute inset-0 bg-white/85"></div>
 
-      <div className="max-w-sm mx-auto relative z-10">
-        {/* Bismillah image — slightly larger */}
+      <div className="max-w-sm mx-auto relative z-10 -mt-12">
+        {/* Bismillah image */}
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}

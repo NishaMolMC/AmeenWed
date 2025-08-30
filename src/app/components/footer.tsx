@@ -18,7 +18,7 @@ export default function Footer() {
             className="text-gray-400 text-sm font-light"
             aria-label="Visit csiitt website"
           >
-            csiitt
+            csiitt.com
           </a>
         </motion.div>
       </div>

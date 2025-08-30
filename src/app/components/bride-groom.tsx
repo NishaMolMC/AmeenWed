@@ -37,7 +37,7 @@ export default function BrideGroom() {
             <div className="text-center">
               <h3 className="text-2xl font-serif font-medium mb-4 text-gray-800">Ameen Koya</h3>
               <div className="space-y-3">
-                <p className="text-gray-600 leading-relaxed">S/o Moosa &amp; Sameena Ambileri</p>
+                <p className="text-gray-600 leading-relaxed">S/o Mr. Moosa &amp; Mrs. Sameena Ambileri</p>
                 <p className="text-gray-600 leading-relaxed">Pottengal (H), Kambalakkad, Wayanad</p>
               </div>
             </div>

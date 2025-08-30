@@ -6,9 +6,13 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { useCallback, useState, useEffect } from "react"
 
+type HeroProps = {
+  slideIntervalMs?: number
+}
+
 const slides = ["/img1.jpg", "/img2.jpg", "/img3.jpg", "/img4.jpg"]
 
-export default function Hero() {
+export default function Hero({ slideIntervalMs = 2000 }: HeroProps) {
   const [index, setIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
 
@@ -18,9 +22,9 @@ export default function Hero() {
 
   useEffect(() => {
     if (isPaused) return
-    const id = setInterval(goNext, 5000)
+    const id = setInterval(goNext, slideIntervalMs)
     return () => clearInterval(id)
-  }, [goNext, isPaused])
+  }, [goNext, isPaused, slideIntervalMs])
 
   const onKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLElement>) => {
@@ -31,6 +35,9 @@ export default function Hero() {
     },
     [goNext],
   )
+
+  const fadeSeconds = Math.min(Math.max((slideIntervalMs / 1000) * 0.25, 0.25), 0.8)
+  const scaleSeconds = Math.min(Math.max((slideIntervalMs / 1000) * 0.5, 0.4), 1.2)
 
   return (
     <section
@@ -52,13 +59,13 @@ export default function Hero() {
             className="absolute inset-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: i === index ? 1 : 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: fadeSeconds, ease: "easeOut" }}
           >
             <motion.div
               className="absolute inset-0"
               initial={{ scale: 1.06 }}
               animate={{ scale: i === index ? 1 : 1.02 }}
-              transition={{ duration: 1.8, ease: "easeOut" }}
+              transition={{ duration: scaleSeconds, ease: "easeOut" }}
             >
               <Image
                 src={src || "/placeholder.svg"}
@@ -75,7 +82,7 @@ export default function Hero() {
           className="absolute inset-0 bg-black/10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.0 }}
+          transition={{ duration: fadeSeconds }}
         />
       </div>
 
@@ -86,7 +93,7 @@ export default function Hero() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
         >
-          Ameen & Resmiya
+          Ameen & Resmi
         </motion.h1>
 
         <motion.p
@@ -95,7 +102,7 @@ export default function Hero() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1, ease: "easeOut" }}
         >
-          Save the Date
+          Wedding Invitation
         </motion.p>
       </div>
     </section>
