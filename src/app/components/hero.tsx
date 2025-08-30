@@ -97,12 +97,12 @@ export default function Hero({ slideIntervalMs = 2000 }: HeroProps) {
         </motion.h1>
 
         <motion.p
-          className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-sans font-light tracking-widest"
+          className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-sans font-light tracking-widest -mt-2"
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1, ease: "easeOut" }}
         >
-          Wedding Invitation
+          wedding invitation
         </motion.p>
       </div>
     </section>

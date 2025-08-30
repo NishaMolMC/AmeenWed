@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/layout.jpg",
-        width: 2400, // increased width
-        height: 1260, // increased height
+        width: 3000, // increased width
+        height: 1575, // increased height
         alt: "Wedding Reception invitation preview image",
       },
     ],
